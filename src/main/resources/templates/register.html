@@ -6,26 +6,25 @@
     <link rel="stylesheet" href="/css/main.css" />
 </head>
 <body>
-<h2>Регистрация</h2>
-<form th:action="@{/register}" th:object="${user}" method="post">
-    <div>
-        <label for="email">Email:</label>
-        <input type="text" id="email" name="email" th:field="*{email}" required>
+<div class="register">
+    <h2 class="register__title" >Регистрация</h2>
+    <form class="register__form" th:action="@{/register}" th:object="${user}" method="post">
+        <label for="email">Email
+            <input type="text" id="email" name="email" th:field="*{email}" required>
+        </label>
+        <label for="fullName">ФИО:
+            <input type="text" id="fullName" name="fullName" th:field="*{fullName}" required>
+        </label>
+        <label for="password">Пароль:
+            <input type="password" id="password" name="password" th:field="*{password}" required>
+        </label>
+        <button type="submit" class="login__form-button button">Зарегистрироваться</button>
+    </form>
+    <div class="register_buttons">
+        <a href="/login" class="button">Login</a>
+        <a href="/" class="button">На главную</a>
     </div>
-    <div>
-        <label for="fullName">ФИО:</label>
-        <input type="text" id="fullName" name="fullName" th:field="*{fullName}" required>
-    </div>
-    <div>
-        <label for="password">Пароль:</label>
-        <input type="password" id="password" name="password" th:field="*{password}" required>
-    </div>
-    <div>
-        <button type="submit">Зарегистрироваться</button>
-    </div>
-</form>
-<a href="/login">Login</a>
-<a href="/">На главную</a>
 
+</div>
 </body>
 </html>
